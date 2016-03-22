@@ -16,8 +16,13 @@ const mockedMatches = { matches:
   }
 
 function createMatch(match) {
+  const mockedPlayers = { players:
+      [ {id: 1, name: 'George Best'}, {id: 2, name: 'Glenn Hoddle'} ],
+    }
+
   return {
     id: match.id,
     opponent: match.opponent,
+    players: mockedPlayers.players
   }
 }

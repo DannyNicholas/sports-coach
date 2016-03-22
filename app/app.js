@@ -19,30 +19,9 @@ const routes = (
 </Route>
 )
 
-// const finalCreateStore = compose(
-//   applyMiddleware(apiActionMiddleware(techRepository)),
-//   applyMiddleware(thunk),
-//   window.devToolsExtension ? window.devToolsExtension() : f => f
-// )(createStore)
-
-// const store = finalCreateStore(reducer)
-
-
-// const render = () => {ReactDOM.render(
-//   <Provider store={store}>
-//       <Router history={hashHistory}>{routes}</Router>
-//   </Provider>,
-//   rootNode
-// )}
-// store.subscribe(render)
-// render()
-
-  matchRepository.getMatches(v => console.log(v))
-
-
-//  console.log(
 matchRepository.getMatches(matches => {
   console.log('got matches')
+    console.log(matches)
   store.dispatch(setState({ matches }))
   ReactDOM.render(
     <Provider store={store}>
@@ -51,7 +30,6 @@ matchRepository.getMatches(matches => {
     rootNode
   )
 })
-//)
 
 export function __unload() {
   ReactDOM.unmountComponentAtNode(rootNode)
