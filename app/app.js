@@ -10,6 +10,8 @@ import { App } from './components/App'
 import { SeasonContainer } from './components/Season'
 import reducer from './store/reducer'
 
+import testRest from './api/test-rest'
+
 const rootNode = document.getElementById('app')
 const store = createStore(reducer)
 
@@ -34,3 +36,5 @@ matchRepository.getMatches(matches => {
 export function __unload() {
   ReactDOM.unmountComponentAtNode(rootNode)
 }
+
+testRest.getUsers(v => console.log(v))
